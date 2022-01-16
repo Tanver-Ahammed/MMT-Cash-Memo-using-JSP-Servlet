@@ -1,0 +1,15 @@
+create database mmt;
+
+use mmt;
+
+create table customer (
+memoNo int auto_increment primary key,
+name varchar(50) not null,
+address varchar(50) not null,
+contact varchar(50) not null,
+date varchar(25) not null,
+urea int not null,
+mop int not null,
+tsp int not null,
+dap int not null
+);

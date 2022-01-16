@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="MMT-Cash-Memo:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>MMT-Cash-Memo</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="MMT-Cash-Memo-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="MMT-Cash-Memo:war exploded" />
+    </root>
+  </artifact>
+</component>
