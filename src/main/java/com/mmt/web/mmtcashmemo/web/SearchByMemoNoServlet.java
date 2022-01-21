@@ -18,19 +18,23 @@ public class SearchByMemoNoServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        int memoNo = Integer.parseInt(request.getParameter("memoNo"));
+        try {
+            int memoNo = Integer.parseInt(request.getParameter("memoNo"));
 
-        MMTDao mmtDao = new MMTDao();
-        Customer customer = mmtDao.searchByMemoNo(memoNo);
+            MMTDao mmtDao = new MMTDao();
+            Customer customer = mmtDao.searchByMemoNo(memoNo);
 
-        if (customer != null) {
-            request.setAttribute("customer", customer);
-            RequestDispatcher requestDispatcher = request.getRequestDispatcher("memo.jsp");
-            requestDispatcher.forward(request, response);
-        } else {
-            HttpSession httpSession = request.getSession();
-            httpSession.setAttribute("message", "not-found");
-            response.sendRedirect("searchByMemoNo.jsp");
+            if (customer != null) {
+                request.setAttribute("customer", customer);
+                RequestDispatcher requestDispatcher = request.getRequestDispatcher("memo.jsp");
+                requestDispatcher.forward(request, response);
+            } else {
+                HttpSession httpSession = request.getSession();
+                httpSession.setAttribute("message", "not-found");
+                response.sendRedirect("searchByMemoNo.jsp");
+            }
+        } catch (Exception e) {
+            response.sendRedirect("error.jsp");
         }
 
     }

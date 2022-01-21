@@ -19,16 +19,21 @@ public class SearchByCustomerNameServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String name = request.getParameter("name");
 
-        MMTDao mmtDao = new MMTDao();
-        List<Customer> customerList = mmtDao.searchByCusName(name);
+        try {
+            String name = request.getParameter("name");
 
-        if (!customerList.isEmpty()) {
-            request.setAttribute("customerList", customerList);
-            RequestDispatcher requestDispatcher = request.getRequestDispatcher("searchByCustomerName.jsp");
-            requestDispatcher.forward(request, response);
+            MMTDao mmtDao = new MMTDao();
+            List<Customer> customerList = mmtDao.searchByCusName(name);
+
+            if (!customerList.isEmpty()) {
+                request.setAttribute("customerList", customerList);
+                RequestDispatcher requestDispatcher = request.getRequestDispatcher("searchByCustomerName.jsp");
+                requestDispatcher.forward(request, response);
+            }
+            System.out.println(customerList);
+        } catch (Exception e) {
+            response.sendRedirect("error.jsp");
         }
-        System.out.println(customerList);
     }
 }

@@ -16,23 +16,27 @@ public class LoginServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        PrintWriter out = response.getWriter();
+        try {
+            PrintWriter out = response.getWriter();
 
-        String username = request.getParameter("username");
-        String password = request.getParameter("password");
+            String username = request.getParameter("username");
+            String password = request.getParameter("password");
 
-        out.println(username);
-        out.println(password);
+            out.println(username);
+            out.println(password);
 
-        if (username.equals("Tanver_Ahammed") && password.equals("mmt")) {
-            HttpSession httpSession = request.getSession();
-            httpSession.setAttribute("username", username);
-            response.sendRedirect("welcome.jsp");
-        } else {
-            HttpSession httpSession = request.getSession();
-            httpSession.setAttribute("message", "wrong");
-            out.println("Your username or Password is wrong!!");
-            response.sendRedirect("login.jsp");
+            if (username.equals("Tanver_Ahammed") && password.equals("mmt")) {
+                HttpSession httpSession = request.getSession();
+                httpSession.setAttribute("username", username);
+                response.sendRedirect("welcome.jsp");
+            } else {
+                HttpSession httpSession = request.getSession();
+                httpSession.setAttribute("message", "wrong");
+                out.println("Your username or Password is wrong!!");
+                response.sendRedirect("login.jsp");
+            }
+        }catch (Exception e) {
+            response.sendRedirect("error.jsp");
         }
 
     }
