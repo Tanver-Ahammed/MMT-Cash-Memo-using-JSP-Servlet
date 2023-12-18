@@ -9,8 +9,5 @@
         <module name="MMT-Cash-Memo" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="MMT-Cash-Memo" target="1.8" />
-    </bytecodeTargetLevel>
   </component>
 </project>

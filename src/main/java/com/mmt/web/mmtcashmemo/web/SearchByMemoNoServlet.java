@@ -1,6 +1,6 @@
 package com.mmt.web.mmtcashmemo.web;
 
-import com.mmt.web.mmtcashmemo.bean.Customer;
+import com.mmt.web.mmtcashmemo.entity.Customer;
 import com.mmt.web.mmtcashmemo.dao.MMTDao;
 
 import javax.servlet.*;

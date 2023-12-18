@@ -1,6 +1,6 @@
 package com.mmt.web.mmtcashmemo.web;
 
-import com.mmt.web.mmtcashmemo.bean.Customer;
+import com.mmt.web.mmtcashmemo.entity.Customer;
 import com.mmt.web.mmtcashmemo.dao.MMTDao;
 
 import javax.servlet.RequestDispatcher;
@@ -15,6 +15,7 @@ import java.util.Date;
 
 @WebServlet("/memo")
 public class MMTServlet extends HttpServlet {
+
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         doGet(req, resp);

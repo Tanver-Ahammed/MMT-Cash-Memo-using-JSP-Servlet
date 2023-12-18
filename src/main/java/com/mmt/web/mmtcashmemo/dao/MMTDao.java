@@ -1,6 +1,6 @@
 package com.mmt.web.mmtcashmemo.dao;
 
-import com.mmt.web.mmtcashmemo.bean.Customer;
+import com.mmt.web.mmtcashmemo.entity.Customer;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -17,7 +17,7 @@ public class MMTDao {
     private String DRIVER = "com.mysql.cj.jdbc.Driver";
     private String URL = "jdbc:mysql://localhost:3306/mmt?allowPublicKeyRetrieval=true&useSSL=false";
     private String USER = "root";
-    private String PASSWORD = "Tanver@123";
+    private String PASSWORD = "12345";
 
     private Connection getConnection() {
         Connection con = null;
@@ -44,6 +44,7 @@ public class MMTDao {
             this.preparedStatement.setInt(7, customer.getTsp());
             this.preparedStatement.setInt(8, customer.getDap());
             affectedRows = this.preparedStatement.executeUpdate();
+            this.preparedStatement.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }

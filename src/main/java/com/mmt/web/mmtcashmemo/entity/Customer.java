@@ -1,4 +1,4 @@
-package com.mmt.web.mmtcashmemo.bean;
+package com.mmt.web.mmtcashmemo.entity;
 
 public class Customer {
     private int memoNo;
