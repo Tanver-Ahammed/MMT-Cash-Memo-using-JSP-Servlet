@@ -35,7 +35,7 @@ public class LoginServlet extends HttpServlet {
                 out.println("Your username or Password is wrong!!");
                 response.sendRedirect("login.jsp");
             }
-        }catch (Exception e) {
+        } catch (Exception e) {
             response.sendRedirect("error.jsp");
         }
 

@@ -48,7 +48,7 @@
 <%--footer--%>
 <footer class="bg-light text-center text-lg-start">
     <div class="text-center p-3">
-        © 2005-2021 Copyright. All rights reserved.
+        © 2005-2024 Copyright. All rights reserved.
         <a href="developer.jsp" style="right: 0">Developer</a>
     </div>
 </footer>
