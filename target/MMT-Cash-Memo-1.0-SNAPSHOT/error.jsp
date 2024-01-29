@@ -24,6 +24,13 @@
     <h1 style="color: red">Error Something!!!</h1>
 </div>
 
+<%!
+    int a = 0;
+%>
+<%
+    System.out.println(++a);
+%>
+
 <%--footer--%>
 <footer class="bg-light text-center text-lg-start">
     <div class="text-center p-3">
