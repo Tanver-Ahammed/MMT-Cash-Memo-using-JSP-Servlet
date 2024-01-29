@@ -15,7 +15,7 @@ public class MMTDao {
             "VALUES (?, ?, ?, ?, ?, ?, ?, ?);";
 
     private String DRIVER = "com.mysql.cj.jdbc.Driver";
-    private String URL = "jdbc:mysql://localhost:3306/mmt?allowPublicKeyRetrieval=true&useSSL=false";
+    private String URL = "jdbc:mysql://docker-mysql:3306/mmt?allowPublicKeyRetrieval=true&useSSL=false";
     private String USER = "root";
     private String PASSWORD = "12345";
 
